@@ -23,13 +23,12 @@ namespace MarqetaClient
             {
                 return await client.PostAsync(Url,Content);
             }
-            
         }
         
 
-        public async Task<HttpContent> PostRequestAndReceiveResponse(string Url, string key, string value)
+        public async Task<HttpContent> PostRequestAndReceiveResponse(string Url, string header, string value)
         {
-           return (await SendPostRequest(Url, CreateHttpContent(key, value))).Content;
+           return (await SendPostRequest(Url, CreateHttpContent(header, value))).Content;
         }
 
         //// Get the stream of the content.
